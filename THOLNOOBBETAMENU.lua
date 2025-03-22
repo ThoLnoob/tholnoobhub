@@ -11,6 +11,19 @@ local Window = Fluent:CreateWindow({
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.M
 })
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "Tho Lnoob",
+    SubTitle = "Version 2",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(530, 350),
+    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Darker",
+    MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
+})
 
 local v22 = Instance.new("ScreenGui");
 local v23 = Instance.new("ImageButton");
@@ -53,7 +66,6 @@ v23.MouseButton1Down:Connect(function()
     v47:Play();
     game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game);
 end)
-
 -- Tabs Menu
 local Tabs = {
     Main = Window:AddTab({ Title = "Auto Farm", Icon = "home" }),
